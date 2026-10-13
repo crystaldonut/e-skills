@@ -33,6 +33,7 @@ evals/<skill>/                fixtures and expected outcomes
 PLAN.md                       the build plan, phase by phase
 PROMPT.md                     the prompt that builds a phase
 NOTICE.md                     attribution
+INSTALL.md                    set up a new machine, build a phase, install the plugin
 ```
 
 ## Status
@@ -41,4 +42,4 @@ Phase 0, scaffold only. See `PLAN.md` for the phases and `PROMPT.md` to run one.
 
 ## Installing later
 
-Once Phase 1 lands, a consuming repo installs this as a Claude Code plugin from a local path or a git remote, then runs `/setup` once. Nothing is copied into the consuming repo except the config file `/setup` writes.
+See `INSTALL.md`: clone, fetch the sources, build a phase, and (after Phase 1) install as a Claude Code plugin from GitHub or a local path, then run `/e-skills:setup` once.
