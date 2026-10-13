@@ -4,7 +4,7 @@ One set of Claude Code skills, owned here, built from three sources and tied to 
 
 | Source | What it contributes | Pinned at |
 |---|---|---|
-| hushmono `.claude/` (NINE30-Inc/hushmono) | The gate chain in use today: `/test`, `/paranoid-review`, `/pr`, `/commit`, senior-qa and fullstack reviewer agents, `/ceo-review`, `/eng-review`, `/investigate`, `/troubleshoot`, `/dispatch` | `d207f16ce` |
+| hushmono `.claude/` (NINE30-Inc/hushmono) | The gate chain in use today: `/test`, `/paranoid-review`, `/pr`, `/commit`, senior-qa and fullstack reviewer agents, `/ceo-review`, `/eng-review`, `/investigate`, `/dispatch` | `d207f16ce` |
 | garrytan/gstack (MIT) | The review pipeline as it stands today: gate integrity, sideways sibling checks, forced-critical rules, specialist subagents, fix-first flow, confidence and evidence rules | `e23f7b8` (2026-10-11) |
 | mattpocock/skills (MIT) | Build-side discipline: grilling, TDD at agreed seams, diagnose-by-feedback-loop, retro, PR evidence, and the writing-for-agents rules that keep every file here short | `49dd158` (2026-10-09) |
 

@@ -42,7 +42,7 @@ Pinned commits and what is taken from each. Fetch into `.sources/` with the comm
 | `.claude/commands/pr.md` | `pr` | preflight, gates record, compliance note, size rule | hard-coded gate names |
 | `.claude/commands/commit.md` | `commit` | preflight, format, types table | the hard-coded co-author line |
 | `.claude/commands/test.md` | `test` | changed-file heuristics, gap flagging | every command (move to config) |
-| `.claude/commands/troubleshoot.md`, `.claude/agents/troubleshooter.md` | `troubleshoot` | evidence-first flow, report shape | nothing yet |
+| `.claude/commands/troubleshoot.md`, `.claude/agents/troubleshooter.md` | nothing | nothing | all of it, stays in hushmono (decision 4) |
 | `.claude/skills/investigate/SKILL.md` | `diagnose` | iron law wording | phase order (diagnose builds the loop first) |
 | `.claude/skills/dispatch/SKILL.md` | `implement`, config | fresh-agent-over-resume, state in git, verify every gate claim | the Opus history |
 | `.claude/skills/guard/SKILL.md` | `guard` | all of it | nothing |

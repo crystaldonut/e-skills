@@ -6,7 +6,7 @@ Replace the hushmono quality-gate chain (`/test`, senior-qa-engineer, `/paranoid
 
 ## What each source gets judged on
 
-- **hushmono**: keep what has earned its place in daily use (base-branch detection, scope drift check, fix-first flow, PR gates record, SEC note, merged-PR preflight, GCP troubleshooting). Drop persona prose, cached commands, duplicated thresholds, and the two overlapping reviewer agents.
+- **hushmono**: keep what has earned its place in daily use (base-branch detection, scope drift check, fix-first flow, PR gates record, SEC note, merged-PR preflight). Drop persona prose, cached commands, duplicated thresholds, and the two overlapping reviewer agents.
 - **gstack (today)**: port review logic as plain text. Drop the runtime, telemetry, Codex integration, Greptile triage, update checks and generated preambles.
 - **mattpocock**: port the build-side skills and the writing rules. Drop GitHub-only ticket flows, auto-commit, and the name collisions.
 
@@ -20,7 +20,6 @@ Replace the hushmono quality-gate chain (`/test`, senior-qa-engineer, `/paranoid
 | `tdd` | model | mattpocock tdd, tests.md, mocking.md; hushmono test conventions | TDD line in CLAUDE.md |
 | `implement` | user | mattpocock implement, minus commit; hushmono dispatch model-routing rules | build step |
 | `diagnose` | model | mattpocock diagnosing-bugs (feedback loop first); gstack investigate flake recipes | `/investigate` |
-| `troubleshoot` | user | hushmono troubleshoot + troubleshooter agent, as a `stacks/gcp` pack | `/troubleshoot` |
 | `test` | user | hushmono `/test`, commands read from repo config | `/test` |
 | `review` | user | hushmono paranoid-review core; gstack checklist and specialists; mattpocock spec axis; senior-qa and fullstack reviewer folded into specialists | `/paranoid-review`, senior-qa-engineer, fullstack-code-reviewer |
 | `plan-review` | user | hushmono ceo-review + eng-review merged and pruned | `/ceo-review`, `/eng-review` |
@@ -31,7 +30,7 @@ Replace the hushmono quality-gate chain (`/test`, senior-qa-engineer, `/paranoid
 | `guard` | user | hushmono guard (gstack lineage) | `/guard` |
 | `writing-for-agents` | model | mattpocock, used to author and maintain this repo | nothing (meta) |
 
-Dropped outright: `dispatch` as a skill (its routing table moves into the repo config and `implement`), `model-portfolio` and `dependency-management` (hushmono-specific, stay there), `careful` (superseded by guard).
+Dropped outright: `dispatch` as a skill (its routing table moves into the repo config and `implement`), `model-portfolio`, `dependency-management` and `troubleshoot` with its troubleshooter agent (hushmono-specific, stay there), `careful` (superseded by guard).
 
 ## Design notes per skill
 
@@ -53,7 +52,7 @@ Budgets: `SKILL.md` 150 lines, `checklist.md` 120, each specialist 60, each stac
 
 ### plan-review
 
-One skill replacing two. Modes: hold (default), expand, selective, reduce. Mode is chosen once and never drifts. Step 0 has three parts: premise challenge, existing-code leverage, and at least two implementation alternatives. Review sections load from sibling files only when relevant: architecture, errors (every error named with its trigger, catcher, user-visible result and test), security, data flow with the three shadow paths (nil, empty, upstream error), tests (every behaviour tested, no test without a regression it would catch), performance, observability, rollout and rollback. Required outputs: NOT in scope, what already exists, failure-mode registry, diagrams for every new flow, unresolved decisions. Target: 150 lines main file, 60 per section, down from the 43 KB and 14 KB files it replaces.
+One skill replacing two. Modes: hold (default), expand, selective, reduce. Mode is chosen once and never drifts. Step 0 has three parts: premise challenge, existing-code leverage, and at least two implementation alternatives. Of the CEO cognitive-patterns list, only the six that map to a step survive, each as one checkable action inside its step: inversion in the premise challenge, focus-as-subtraction and speed calibration in mode selection, proxy skepticism in the premise challenge, hierarchy-as-service and edge-case paranoia in the UI section. The other eleven are dropped. Review sections load from sibling files only when relevant: architecture, errors (every error named with its trigger, catcher, user-visible result and test), security, data flow with the three shadow paths (nil, empty, upstream error), tests (every behaviour tested, no test without a regression it would catch), performance, observability, rollout and rollback. Required outputs: NOT in scope, what already exists, failure-mode registry, diagrams for every new flow, unresolved decisions. Target: 150 lines main file, 60 per section, down from the 43 KB and 14 KB files it replaces.
 
 ### pr
 
@@ -74,10 +73,6 @@ Fetch the ticket and state its title. Call `tdd` at the agreed seams. Typecheck 
 ### diagnose
 
 Phase 1 is the skill: build a fast, deterministic, red-capable command before any hypothesis. Then minimise, rank three to five falsifiable hypotheses, instrument one variable at a time with tagged logs, write the regression test before the fix, clean up by grepping the tag. Flake recipe from gstack: reproduce on main in a worktree, report failed-of-N, never loosen the assertion.
-
-### troubleshoot
-
-Production evidence first: logs, datastore state, provider responses. Lives in `stacks/gcp` because its commands are GCP-specific. Produces an incident report, then hands to `diagnose`.
 
 ### grill, spec
 
@@ -117,7 +112,7 @@ Author `writing-for-agents` first and apply it to everything after. Add `.claude
 
 ### Phase 3: build side
 
-`grill`, `spec`, `tdd`, `implement`, `diagnose`, `troubleshoot`. Exit: one real ticket taken from grill to review using only these skills.
+`grill`, `spec`, `tdd`, `implement`, `diagnose`. Exit: one real ticket taken from grill to review using only these skills.
 
 ### Phase 4: plan side and hygiene
 
@@ -136,5 +131,7 @@ Each skill ships a docs page with an "It's working if" section and an `evals/<sk
 1. Repo name and location. Decided 2026-10-12: `e-skills`, at `~/Development/e-skills`, remote `https://github.com/crystaldonut/e-skills.git` (crystaldonut account, not ivanatnine30).
 2. Plugin name. Decided 2026-10-12: `e-skills`. It prefixes every skill, so `/e-skills:review` always works even when a harness ships its own `/review`.
 3. Tracker. Decided 2026-10-12: GitHub via `gh` only. No Atlassian MCP, `acli` or Jira prose for now.
-4. Whether `troubleshoot` stays in a stack pack or becomes a hushmono-only skill.
-5. Whether `plan-review` keeps the CEO cognitive-patterns section or drops it as a no-op.
+4. `troubleshoot`. Decided 2026-10-12: stays in hushmono as is. e-skills ships `diagnose` only.
+5. CEO cognitive patterns. Decided 2026-10-12: keep only the six that map to a review step, written as actions inside those steps (see the plan-review design note). The list itself is dropped.
+
+All five decided. Phase 1 can start.
