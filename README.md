@@ -38,7 +38,7 @@ INSTALL.md                    set up a new machine, build a phase, install the p
 
 ## Status
 
-Phase 0, scaffold only. See `PLAN.md` for the phases and `PROMPT.md` to run one.
+Phase 1: the plugin manifest, `writing-for-agents` and `setup`. See `PLAN.md` for the phases and `PROMPT.md` to run one.
 
 ## Installing later
 

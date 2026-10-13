@@ -1,0 +1,16 @@
+{
+  "name": "e-skills",
+  "owner": {
+    "name": "Ivan Ramirez"
+  },
+  "metadata": {
+    "description": "The e-skills skill set for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "e-skills",
+      "source": "./",
+      "description": "Text-only skills for building, reviewing and shipping code, configured per repo by one file."
+    }
+  ]
+}

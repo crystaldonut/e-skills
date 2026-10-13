@@ -1,0 +1,8 @@
+{
+  "name": "e-skills",
+  "version": "0.1.0",
+  "description": "Text-only skills for building, reviewing and shipping code, configured per repo by one file.",
+  "author": { "name": "Ivan Ramirez" },
+  "repository": "https://github.com/crystaldonut/e-skills",
+  "license": "MIT"
+}

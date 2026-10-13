@@ -51,4 +51,4 @@ For a local checkout instead of GitHub, add the marketplace by path: `/plugin ma
 
 `/e-skills:setup` writes one file, `docs/agents/skillset.md`, into the consuming repo and three pointer lines into its `CLAUDE.md`. Nothing else is copied.
 
-Exact plugin commands are confirmed when Phase 1 lands; until then treat step 5 as the intended shape.
+`claude plugin validate . --strict` passes on the manifest. `/e-skills:setup` was run with the plugin loaded from a local path (`claude --plugin-dir`); the three `/plugin` commands above have not been run yet.

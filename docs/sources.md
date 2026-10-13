@@ -17,7 +17,7 @@ Pinned commits and what is taken from each. Fetch into `.sources/` with the comm
 | `skills/engineering/pr/SKILL.md` | `pr` | summary visuals, evidence tiers, merge danger | nothing |
 | `skills/engineering/retro/SKILL.md` | `retro` | categories, mechanical-vs-judgment classification | nothing |
 | `skills/productivity/handoff/SKILL.md` | `handoff` | all of it | nothing |
-| `skills/engineering/setup-matt-pocock-skills/*` | `setup` | explore, propose, confirm, write, GitHub tracker template | GitLab tracker template, triage labels |
+| `skills/engineering/setup-matt-pocock-skills/SKILL.md`, `issue-tracker-github.md`, `issue-tracker-local.md`, `domain.md` | `setup` | explore, propose, confirm, write; GitHub and local-markdown tracker conventions; glossary and ADR paths as config rows | `issue-tracker-gitlab.md`, `triage-labels.md`, the PR triage surface, wayfinding operations, the three separate `docs/agents/` files (one config file here) |
 
 ## garrytan/gstack at e23f7b8 (2026-10-11)
 
