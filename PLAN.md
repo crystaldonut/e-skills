@@ -91,7 +91,7 @@ Ported with light edits. `retro` classifies each mistake first: mechanical ones 
 
 `/setup` writes one file into the consuming repo, `docs/agents/skillset.md`, and adds a three-line pointer to its `CLAUDE.md`. Sections:
 
-- tracker: Jira project key via the Atlassian MCP, or GitHub via `gh`, or local markdown
+- tracker: GitHub issues via `gh` (repo slug), or local markdown. No Jira for now; a Jira option can be added later without changing the skills, since they only read this section.
 - commands: test, lint, typecheck per area of the repo
 - thresholds: coverage, function size, nesting, PR size
 - docs: paths and templates for requirements, design docs, plans, ADRs, glossary, learnings
@@ -135,6 +135,6 @@ Each skill ships a docs page with an "It's working if" section and an `evals/<sk
 
 1. Repo name and location. Decided 2026-10-12: `e-skills`, at `~/Development/e-skills`, remote `https://github.com/crystaldonut/e-skills.git` (crystaldonut account, not ivanatnine30).
 2. Plugin name. Decided 2026-10-12: `e-skills`. It prefixes every skill, so `/e-skills:review` always works even when a harness ships its own `/review`.
-3. Jira access: Atlassian MCP, `acli`, or prose instructions. The MCP is what is available today.
+3. Tracker. Decided 2026-10-12: GitHub via `gh` only. No Atlassian MCP, `acli` or Jira prose for now.
 4. Whether `troubleshoot` stays in a stack pack or becomes a hushmono-only skill.
 5. Whether `plan-review` keeps the CEO cognitive-patterns section or drops it as a no-op.

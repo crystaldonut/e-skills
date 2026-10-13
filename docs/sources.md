@@ -17,7 +17,7 @@ Pinned commits and what is taken from each. Fetch into `.sources/` with the comm
 | `skills/engineering/pr/SKILL.md` | `pr` | summary visuals, evidence tiers, merge danger | nothing |
 | `skills/engineering/retro/SKILL.md` | `retro` | categories, mechanical-vs-judgment classification | nothing |
 | `skills/productivity/handoff/SKILL.md` | `handoff` | all of it | nothing |
-| `skills/engineering/setup-matt-pocock-skills/*` | `setup` | explore, propose, confirm, write | GitHub and GitLab tracker templates, triage labels |
+| `skills/engineering/setup-matt-pocock-skills/*` | `setup` | explore, propose, confirm, write, GitHub tracker template | GitLab tracker template, triage labels |
 
 ## garrytan/gstack at e23f7b8 (2026-10-11)
 
